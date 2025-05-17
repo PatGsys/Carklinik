@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Carklinik Salzburg</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0; padding: 0;
+    background: #f5f7fa;
+    color: #333;
+  }
+  header {
+    background-color: #003366;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header h1 {
+    margin: 0; font-size: 1.6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  nav {
+    display: none;
+  }
+  .burger {
+    cursor: pointer;
+    width: 25px;
+  }
+  .burger div {
+    background: white;
+    height: 3px;
+    margin: 5px 0;
+    border-radius: 2px;
+  }
+  main {
+    padding: 20px;
+  }
+  .hero {
+    background: url('file:///C:/Users/Paz/Desktop/images.jpg') no-repeat center center/cover;
+    height: 220px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 800;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .services {
+    display: flex;
+    gap: 15px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .service {
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 0 5px #ccc;
+    flex: 1 1 200px;
+    min-width: 200px;
+  }
+  .service h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: #003366;
+    border-bottom: 2px solid #003366;
+    padding-bottom: 6px;
+  }
+  .opening-hours, .contact {
+    background: white;
+    padding: 15px;
+    margin-top: 25px;
+    border-radius: 6px;
+    box-shadow: 0 0 5px #ccc;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  label {
+    margin: 8px 0 4px;
+    font-weight: 600;
+  }
+  input, textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  textarea {
+    resize: vertical;
+  }
+  button {
+    margin-top: 15px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+  }
+  footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 30px;
+    font-weight: 600;
+  }
+
+  /* Responsive Navigation */
+  @media (min-width: 600px) {
+    nav {
+      display: block;
+    }
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .burger {
+      display: none;
+    }
+    header {
+      justify-content: flex-start;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Carklinik Salzburg</h1>
+  <div class="burger" onclick="toggleNav()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <nav id="nav-menu">
+    <a href="#leistungen">Leistungen</a>
+    <a href="#kontakt">Kontakt</a>
+    <a href="#oeffnungszeiten">Öffnungszeiten</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero">
+    Professionelle Autowerkstatt in Salzburg
+  </div>
+
+  <section id="leistungen" class="services">
+    <div class="service">
+      <h2>Reparaturen</h2>
+      <p>Von Motor bis Auspuff – wir sorgen für Ihr Auto.</p>
+    </div>
+    <div class="service">
+      <h2>Wartung</h2>
+      <p>Regelmäßige Inspektionen für sichere Fahrt.</p>
+    </div>
+    <div class="service">
+      <h2>Diagnose</h2>
+      <p>Moderne Technik zur schnellen Fehlererkennung.</p>
+    </div>
+    <div class="service">
+      <h2>Ersatzteile</h2>
+      <p>Hochwertige Ersatzteile für alle Automarken.</p>
+    </div>
+  </section>
+
+  <section id="oeffnungszeiten" class="opening-hours">
+    <h2>Öffnungszeiten & Adresse</h2>
+    <p>Breitenfeldstraße 3, 5020 Salzburg</p>
+    <p>Mo - Do: 08:00 - 12:00 & 13:00 - 17:00</p>
+    <p>Fr: 08:00 - 13:00</p>
+    <p>So & Feiertag: Geschlossen</p>
+  </section>
+
+  <section id="kontakt" class="contact">
+    <h2>Kontakt</h2>
+    <form onsubmit="alert('Danke für Ihre Nachricht!'); return false;">
+      <label for="name">Name</label>
+      <input id="name" name="name" required />
+      <label for="email">E-Mail</label>
+      <input id="email" name="email" type="email" required />
+      <label for="message">Nachricht</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+      <button type="submit">Absenden</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  © 2025 Carklinik Salzburg – Ihre Autowerkstatt<br />
+  Geschäftsführer: Kristijan Brcina<br />
+  Tel.: 0676 3616429
+</footer>
+
+<script>
+  function toggleNav() {
+    const nav = document.getElementById('nav-menu');
+    if(nav.style.display === 'block') {
+      nav.style.display = 'none';
+    } else {
+      nav.style.display = 'block';
+    }
+  }
+</script>
+
+</body>
+</html>
